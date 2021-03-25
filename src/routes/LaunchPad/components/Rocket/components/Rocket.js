@@ -1,24 +1,9 @@
-import React, { useState, Component } from 'react';
+import React, { useState } from 'react';
 import RocketCore from './RocketCore';
 
-export function FunctionalRocket() {
+export function Rocket() {
   const [initialLaunchTime] = useState(Date.now());
 
+  console.log('This message should appear only once.');
   return <RocketCore initialLaunchTime={initialLaunchTime} />;
-}
-
-export class ClassRocket extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      initialLaunchTime: Date.now()
-    };
-  }
-
-  render() {
-    const { initialLaunchTime } = this.state;
-
-    return <RocketCore initialLaunchTime={initialLaunchTime} />;
-  }
 }
